@@ -4,7 +4,7 @@ class LinkedList {
     }
   
     prepend(value) {
-        let newNode = new Node(value, this.head);
+        this.head = new Node(value, this.head);
     }
 
     append(value) {
@@ -105,14 +105,19 @@ class LinkedList {
         let theList;
 
         if (tmp === null) {
-            theList = `( ${tmp} )`;
+            theList = `${tmp}`;
         } else {
             theList = `( ${tmp.value} )`;
         }
 
         while (tmp !== null) {
             tmp = tmp.nextNode;
-            theList = theList + ` -> ( ${tmp.value} )`;
+
+            if (tmp === null) {
+                theList = theList + ` -> ${tmp}`;
+            } else {
+                theList = theList + ` -> ( ${tmp.value} )`;
+            }
         }
 
         return theList;
@@ -180,4 +185,6 @@ class Node {
 
 let linkin = new LinkedList();
 
+console.log(linkin.toString());
+linkin.prepend("1");
 console.log(linkin.toString());
