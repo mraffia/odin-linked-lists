@@ -136,13 +136,38 @@ class LinkedList {
             prev.next = new Node(value, cur);
         }
     }
+
+    removeAt(index) {
+        if (this.head === null) {
+            return null;
+        }
+
+        if (index === 0) {
+            this.head = this.head.nextNode;
+            return;
+        }
+
+        let listIndex = 0;
+        let prev = null;
+        let cur = this.head;
+
+        while (cur !== null && listIndex < index) {
+            prev = cur;
+            cur = cur.nextNode;
+            listIndex++;
+        }
+
+        if (cur === null) {
+            return null;
+        }
+
+        prev.nextNode = cur.nextNode;
+    }
 }
 
 class Node {
-
     constructor(value = null, nextNode = null) {
       this.value = value;
       this.nextNode = nextNode;
     }
-  
 }
