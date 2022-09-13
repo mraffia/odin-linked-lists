@@ -72,6 +72,19 @@ class LinkedList {
             tmp = null;
         }
     }
+
+    contains(value) {
+        let tmp = this.head;
+        while (tmp !== null && !(tmp.value === value)) {
+            tmp = tmp.nextNode;
+        }
+
+        if (value === tmp.value) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
 
 class Node {
