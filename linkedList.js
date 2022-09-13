@@ -44,6 +44,17 @@ class LinkedList {
 
         return tmp;
     }
+
+    at(index) {
+        let listIndex = 0;
+        let tmp = head;
+        while (tmp !== null && listIndex < index) {
+            tmp = tmp.nextNode;
+            listIndex++;
+        }
+
+        return tmp;
+    }
 }
 
 class Node {
