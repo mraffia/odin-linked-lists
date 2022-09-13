@@ -9,10 +9,10 @@ class LinkedList {
     }
 
     append(value) {
-        if (head === null) {
+        if (this.head === null) {
             this.prepend(value);
         } else {
-            let tmp = head;
+            let tmp = this.head;
             while (tmp.nextNode !== null) {
                 tmp = tmp.nextNode;
             }
@@ -23,7 +23,7 @@ class LinkedList {
 
     size() {
         let count = 0;
-        let tmp = head;
+        let tmp = this.head;
         while (tmp.nextNode !== null) {
             tmp = tmp.nextNode;
             count++;
@@ -37,17 +37,21 @@ class LinkedList {
     }
 
     tail() {
-        let tmp = head;
-        while (tmp.nextNode !== null) {
-            tmp = tmp.nextNode;
-        }
+        if (this.head === null) {
+            return this.head;
+        } else {
+            let tmp = this.head;
+            while (tmp.nextNode !== null) {
+                tmp = tmp.nextNode;
+            }
 
-        return tmp;
+            return tmp;
+        }
     }
 
     at(index) {
         let listIndex = 0;
-        let tmp = head;
+        let tmp = this.head;
         while (tmp !== null && listIndex < index) {
             tmp = tmp.nextNode;
             listIndex++;
@@ -57,12 +61,16 @@ class LinkedList {
     }
 
     pop() {
-        let tmp = head;
-        while (tmp.nextNode.nextNode !== null) {
-            tmp = tmp.nextNode;
-        }
+        if (this.head === null) {
+            return null;
+        } else {
+            let tmp = this.head;
+            while (tmp.nextNode !== null) {
+                tmp = tmp.nextNode;
+            }
 
-        tmp.nextNode = null;
+            tmp = null;
+        }
     }
 }
 
