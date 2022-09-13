@@ -21,7 +21,16 @@ class LinkedList {
         }
     }
 
-    
+    size() {
+        let count = 0;
+        let tmp = head;
+        while (tmp.nextNode !== null) {
+            tmp = tmp.nextNode;
+            count++;
+        }
+
+        return count;
+    }
 }
 
 class Node {
