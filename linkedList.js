@@ -82,6 +82,8 @@ class LinkedList {
             return false;
         } else if (value === tmp.value) {
             return true;
+        } else {
+            return false;
         }
     }
 
@@ -144,7 +146,7 @@ class LinkedList {
         }
 
         if (cur !== null) {
-            prev.next = new Node(value, cur);
+            prev.nextNode = new Node(value, cur);
         }
     }
 
@@ -184,6 +186,7 @@ class Node {
 }
 
 // TEST
+
 let linkin = new LinkedList();
 
 // toString
@@ -226,3 +229,19 @@ console.log(linkin.toString());
 // contains
 console.log(linkin.contains("1"));
 console.log(linkin.contains("3"));
+
+// find
+console.log(linkin.find("1"));
+console.log(linkin.find("3"));
+
+// insertAt
+linkin.insertAt("5", 1);
+console.log(linkin.toString());
+linkin.insertAt("6", 0);
+console.log(linkin.toString());
+
+// removeAt
+linkin.removeAt(1);
+console.log(linkin.toString());
+linkin.removeAt(0);
+console.log(linkin.toString());
