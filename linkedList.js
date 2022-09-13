@@ -78,10 +78,10 @@ class LinkedList {
             tmp = tmp.nextNode;
         }
 
-        if (value === tmp.value) {
-            return true;
-        } else {
+        if (tmp === null) {
             return false;
+        } else if (value === tmp.value) {
+            return true;
         }
     }
 
@@ -222,3 +222,7 @@ linkin.pop();
 console.log(linkin.toString());
 linkin.pop();
 console.log(linkin.toString());
+
+// contains
+console.log(linkin.contains("1"));
+console.log(linkin.contains("3"));
