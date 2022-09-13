@@ -37,7 +37,7 @@ class LinkedList {
 
     tail() {
         if (this.head === null) {
-            return this.head;
+            return null;
         } else {
             let tmp = this.head;
             while (tmp.nextNode !== null) {
@@ -64,11 +64,11 @@ class LinkedList {
             return null;
         } else {
             let tmp = this.head;
-            while (tmp.nextNode !== null) {
+            while (tmp.nextNode.nextNode !== null) {
                 tmp = tmp.nextNode;
             }
 
-            tmp = null;
+            tmp.nextNode = null;
         }
     }
 
@@ -204,5 +204,21 @@ console.log(linkin.toString());
 // size
 console.log(linkin.size());
 
-//head
+// theHead
 console.log(linkin.theHead());
+
+// tail
+console.log(linkin.tail());
+
+// at
+console.log(linkin.at(0));
+console.log(linkin.at(1));
+console.log(linkin.at(2));
+console.log(linkin.at(3));
+console.log(linkin.at(4));
+
+// pop
+linkin.pop();
+console.log(linkin.toString());
+linkin.pop();
+console.log(linkin.toString());
