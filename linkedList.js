@@ -111,6 +111,31 @@ class LinkedList {
 
         return theList;
     }
+
+    insertAt(value, index) {
+        if (this.head === null) {
+            return null;
+        }
+
+        if (index === 0) {
+            this.prepend(value);
+            return;
+        }
+
+        let listIndex = 0;
+        let prev = null;
+        let cur = this.head;
+
+        while (cur !== null && listIndex < index) {
+            prev = cur;
+            cur = cur.nextNode;
+            listIndex++;
+        }
+
+        if (cur !== null) {
+            prev.next = new Node(value, cur);
+        }
+    }
 }
 
 class Node {
