@@ -21,9 +21,9 @@ class LinkedList {
     }
 
     size() {
-        let count = 0;
+        let count = 1;
         let tmp = this.head;
-        while (tmp.nextNode !== null) {
+        while (tmp !== null) {
             tmp = tmp.nextNode;
             count++;
         }
@@ -31,7 +31,7 @@ class LinkedList {
         return count;
     }
 
-    head() {
+    theHead() {
         return this.head;
     }
 
@@ -183,8 +183,26 @@ class Node {
     }
 }
 
+// TEST
 let linkin = new LinkedList();
 
+// toString
 console.log(linkin.toString());
+
+// prepend
 linkin.prepend("1");
 console.log(linkin.toString());
+linkin.prepend("2");
+console.log(linkin.toString());
+
+// append
+linkin.append("3");
+console.log(linkin.toString());
+linkin.append("4");
+console.log(linkin.toString());
+
+// size
+console.log(linkin.size());
+
+//head
+console.log(linkin.theHead());
