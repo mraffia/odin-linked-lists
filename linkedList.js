@@ -1,5 +1,4 @@
 class LinkedList {
-
     constructor(head = null) {
         this.head = head;
     }
@@ -103,7 +102,14 @@ class LinkedList {
 
     toString() {
         let tmp = this.head;
-        let theList = `( ${tmp.value} )`;
+        let theList;
+
+        if (tmp === null) {
+            theList = `( ${tmp} )`;
+        } else {
+            theList = `( ${tmp.value} )`;
+        }
+
         while (tmp !== null) {
             tmp = tmp.nextNode;
             theList = theList + ` -> ( ${tmp.value} )`;
@@ -171,3 +177,7 @@ class Node {
       this.nextNode = nextNode;
     }
 }
+
+let linkin = new LinkedList();
+
+console.log(linkin.toString());
