@@ -55,6 +55,15 @@ class LinkedList {
 
         return tmp;
     }
+
+    pop() {
+        let tmp = head;
+        while (tmp.nextNode.nextNode !== null) {
+            tmp = tmp.nextNode;
+        }
+
+        tmp.nextNode = null;
+    }
 }
 
 class Node {
