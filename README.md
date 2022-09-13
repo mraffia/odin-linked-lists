@@ -11,6 +11,6 @@ Linked Lists project from Javascript section of the Full Stack Javascript Course
 - `pop` removes the last element from the list.
 - `contains(value)` returns true if the passed in value is in the list and otherwise returns false.
 - `find(value)` returns the index of the node containing value, or null if not found.
-- `toString` represents the LinkedList objects as strings in the format: `( value ) -> ( value ) -> ( value ) -> null`.
-- `insertAt(value, index)` that inserts a new node with the provided `value` at the given `index`.
-- `removeAt(index)` that removes the node at the given `index`.
+- `toString` represents the LinkedList objects as strings in the format: `( value ) -> ( value ) -> null`.
+- `insertAt(value, index)` inserts a new node with the provided `value` at the given `index`.
+- `removeAt(index)` removes the node at the given `index`.
